@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️Kanb...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #formulaire {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        #infosUtilisateur {
+            text-align: center;
+            display: none;
+        }
+
+        @media only screen and (min-width: 600px) {
+            #formulaire {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            input[type="text"] {
+                width: calc(100% - 20px);
+            }
+
+            button {
+                width: calc(50% - 5px);
+                margin-right: 5px;
+            }
+
+            #infosUtilisateur {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                display: block;
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Je ...</h1>
+    <p></p>
+    <form id="formulaire">
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom">
+        <button type="submit">Voir le message</button>
+    </form>
+    
+    <!-- Boutons pour accéder aux autres pages -->
+    <div style="text-align: center;">
+        <button onclick="location.href='décompte.html';">Le compte a rebours💍</button>
+        <button onclick="location.href='jeu.html';">Jeu</button>
+        <button onclick="location.href='rappels.html';">rappels</button>
+    </div>
+
+    <!-- Affichage des informations de l'utilisateur -->
+    <div id="infosUtilisateur"></div>
+
+    <script>
+        document.getElementById("formulaire").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var prenom = document.getElementById("prenom").value;
+            var nom = document.getElementById("nom").value;
+            var infosUtilisateur = document.getElementById("infosUtilisateur");
+            infosUtilisateur.textContent = "Je T'aime❤️ " + prenom + " " + nom;
+            infosUtilisateur.style.display = "block";
+        });
+    </script>
+
+    <style>
+    body {
+  background: #e0e5ec;
+}
+h1 {
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+  color: #676767;
+}
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 600px) {
+  .frame {
+    width: 100%;
+  }
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+              7px 7px 20px 0px rgba(0,0,0,.1),
+              4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+/* Rest of the button styles */
+/* Insert the rest of your button styles here */
+</style>
+</body>
+</html>

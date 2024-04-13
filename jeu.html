@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 jeu de mémoire</title>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/game.js" defer></script>
+    <style>
+        .user-info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<h1><strong>HAYAT</strong></h1>
+<body>
+    <div class="user-info" id="userInfo" style="display: none;"></div> <!-- Ajout de la div pour afficher les informations de l'utilisateur -->
+    <div class="game">
+        <div class="controls">
+        
+            <button>Commencer</button>
+            <div class="stats">
+                <div class="essaies">0 essaies</div>
+                <div class="temps">temps: 0 sec</div>
+            </div>
+        </div>
+        <div class="board-container">
+            <div class="board" data-dimension="4"></div>
+            <div class="win">tu as gagner!</div>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour récupérer les informations de l'utilisateur depuis le stockage local et les afficher
+        window.onload = function() {
+            var prenom = localStorage.getItem("prenom");
+            var nom = localStorage.getItem("nom");
+            if (prenom && nom) {
+                var userInfo = document.getElementById("userInfo");
+                userInfo.textContent = "Bonjour, " + prenom + " " + nom;
+                userInfo.style.display = "block";
+            }
+        };
+    </script>
+</body>
+</html>
